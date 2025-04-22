@@ -231,13 +231,16 @@ const Contact = () => {
         </FormSection>
 
         <InfoSection>
-          <InfoText>Bu program ücretli bir programdır.</InfoText>
+          <InfoText>BU PROGRAM İÇİN KONTENJAN DOLMUŞTUR.</InfoText>
           <InfoText>
-            Bilgilerinizi girdikten sonra aşağıdaki hesaba kamp ücreti olan
-            1000₺’yi göndermeniz gerekmektedir.
+            Eğer farklı tarihlerde veya saatlerde benzer bir programın
+            gerçekleştirilmesini isterseniz lütfen başvurunuzu bırakın.
           </InfoText>
           <InfoText>
-            Ücreti göndermemeniz dahilinde başvurunuz dikkate alınmayacaktır.
+            Herhangi bir ücret ödemeniz gerekmemektedir.
+          </InfoText>
+          <InfoText>
+            Ücret göndermeniz dahilinde ikincil kamptaki yeriniz ayrılacaktır.
           </InfoText>
           <AccountDetails>
             <InfoText>
@@ -247,7 +250,7 @@ const Contact = () => {
               <strong>IBAN:</strong> TR470020500009728730500004
             </InfoText>
           </AccountDetails>
-          <RemainingSlot>KALAN KONTENJAN: 5 / 21</RemainingSlot>
+          <RemainingSlot>KALAN KONTENJAN: 0 / 21</RemainingSlot>
         </InfoSection>
       </ContentContainer>
 
