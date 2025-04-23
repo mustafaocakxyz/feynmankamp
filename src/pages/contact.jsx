@@ -237,10 +237,10 @@ const Contact = () => {
             gerçekleştirilmesini isterseniz lütfen başvurunuzu bırakın.
           </InfoText>
           <InfoText>
-            Herhangi bir ücret ödemeniz gerekmemektedir.
+            Kamp ücreti olan 1000₺'yi gönderirseniz ikinci kamptaki yeriniz ayrılacaktır.
           </InfoText>
           <InfoText>
-            Ücret göndermeniz dahilinde ikincil kamptaki yeriniz ayrılacaktır.
+            İkinci kampta kalan kontejan: 11 / 21
           </InfoText>
           <AccountDetails>
             <InfoText>
@@ -250,7 +250,7 @@ const Contact = () => {
               <strong>IBAN:</strong> TR470020500009728730500004
             </InfoText>
           </AccountDetails>
-          <RemainingSlot>KALAN KONTENJAN: 0 / 21</RemainingSlot>
+          <RemainingSlot>1. KAMP KONTENJAN: 0 / 21</RemainingSlot>
         </InfoSection>
       </ContentContainer>
 
