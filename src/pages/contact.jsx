@@ -231,10 +231,10 @@ const Contact = () => {
         </FormSection>
 
         <InfoSection>
-          <InfoText>BU PROGRAM İÇİN KONTENJAN DOLMUŞTUR.</InfoText>
+          <InfoText>BİRİNCİ KAMP İÇİN KONTENJAN DOLMUŞTUR.</InfoText>
           <InfoText>
-            Eğer farklı tarihlerde veya saatlerde benzer bir programın
-            gerçekleştirilmesini isterseniz lütfen başvurunuzu bırakın.
+            Yoğun talep üzerine 29 Nisan'da bir kamp daha düzenlenecektir.
+            (Bu bilgi değişebilir.)
           </InfoText>
           <InfoText>
             Kamp ücreti olan 1000₺'yi gönderirseniz ikinci kamptaki yeriniz ayrılacaktır.
@@ -251,6 +251,7 @@ const Contact = () => {
             </InfoText>
           </AccountDetails>
           <RemainingSlot>1. KAMP KONTENJAN: 0 / 21</RemainingSlot>
+          <RemainingSlot>2. KAMP KONTENJAN: 11 / 21</RemainingSlot>
         </InfoSection>
       </ContentContainer>
 
