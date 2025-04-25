@@ -310,7 +310,7 @@ const Home = () => {
       </Container>
       <Detail1 id="detail">
         <Title $second={true} style={{ color: "#36B7FF" }}>
-          Kamp Başlangıç Tarihi: 25 Nisan 2025
+          2. Kamp Başlangıç Tarihi: 29 Nisan 2025
         </Title>
         <span
           style={{
