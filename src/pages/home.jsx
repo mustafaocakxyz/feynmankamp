@@ -236,31 +236,15 @@ const Home = () => {
   const data = [
     {
       order: "1.Gün -",
-      text: "Trigonometri I (+Çıkmış Çözümü)",
+      text: "Trigonometri I - II (+Çıkmış Çözümü)",
     },
     {
       order: "2.Gün -",
-      text: "Trigonometri II (+Çıkmış Çözümü)",
+      text: "Log & Diziler + Limit & Süreklilik (+Çıkmış Çözümü)",
     },
     {
       order: "3.Gün -",
-      text: "Logaritma & Diziler (+Çıkmış Çözümü)",
-    },
-    {
-      order: "4.Gün -",
-      text: "Limit & Süreklilik (+Çıkmış Çözümü)",
-    },
-    {
-      order: "5.Gün -",
-      text: "Türev (+Çıkmış Çözümü)",
-    },
-    {
-      order: "6.Gün -",
-      text: "İntegral (+Çıkmış Çözümü)",
-    },
-    {
-      order: "7.Gün -",
-      text: "Genel Tekrar",
+      text: "Türev & İntegral (+Çıkmış Çözümü)",
     },
   ];
   const data2 = [
@@ -310,7 +294,7 @@ const Home = () => {
       </Container>
       <Detail1 id="detail">
         <Title $second={true} style={{ color: "#36B7FF" }}>
-          2. Kamp Başlangıç Tarihi: 29 Nisan 2025
+          Kamp Başlangıç Tarihi: 5 Mayıs 2025
         </Title>
         <span
           style={{
@@ -320,7 +304,7 @@ const Home = () => {
             display: "block",
           }}
         >
-          Kamp her gün saat 20:00 - 21:00 arası online olarak gerçekleşecektir.
+          Kamp her gün akşam saatlerinde online olarak gerçekleşecektir.
         </span>
         {data.map(({ order, text }, id) => {
           return (

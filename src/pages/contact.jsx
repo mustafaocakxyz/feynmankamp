@@ -233,7 +233,7 @@ const Contact = () => {
         <InfoSection>
           <InfoText>BU PROGRAM ÜCRETLİ BİR PROGRAMDIR.</InfoText>
           <InfoText>
-            Yoğun talep üzerine 29 Nisan'da ikinci bir kamp daha düzenlenecektir.
+            Yoğun talep üzerine 5 Mayıs'ta ikinci bir kamp daha düzenlenecektir.
             (Bu bilgi değişebilir.)
           </InfoText>
           <InfoText>
@@ -250,8 +250,7 @@ const Contact = () => {
               <strong>IBAN:</strong> TR470020500009728730500004
             </InfoText>
           </AccountDetails>
-          <RemainingSlot>2. KAMP KONTENJAN: 9 / 21</RemainingSlot>
-          <RemainingSlot>1. KAMP KONTENJAN: 0 / 21</RemainingSlot>
+          <RemainingSlot>KALAN KONTENJAN: 13 / 21</RemainingSlot>
         </InfoSection>
       </ContentContainer>
 
