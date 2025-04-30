@@ -254,11 +254,11 @@ const Home = () => {
     },
     {
       icon: icon2,
-      text: "Konuları derece öğrencisinden öğrenecek vederece öğrencisi gözünden çıkmışları çözeceksin.",
+      text: "Konuları derece öğrencisinden öğrenecek ve derece öğrencisi gözünden çıkmışları çözeceksin.",
     },
     {
       icon: icon3,
-      text: "Feynman Tekniğini uygulayarak konulara vesorulara hükmeder hale geleceksin.",
+      text: "Feynman Tekniğini uygulayarak konulara ve sorulara hükmeder hale geleceksin.",
     },
   ];
   return (
