@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import banner from "../public/banner.jpg";
-import icon1 from "../public/image-1.jpg";
-import icon2 from "../public/image-2.jpg";
-import icon3 from "../public/image-3.jpg";
+import placeholder from "../public/placeholder.png";
+import image2 from "../public/2.png";
+import image3 from "../public/3.png";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const Wrap = styled.div`
   padding: 50px;
@@ -35,15 +36,15 @@ const Title = styled.h2`
 
 const Container = styled.div`
   display: flex;
-  gap: 120px;
-  margin: 150px 0px 200px 0;
+  gap: 156px;
+  margin: 195px 0px 260px 0;
   align-items: center;
   justify-content: center;
 
   @media (max-width: 1250px) {
     flex-direction: column;
-    gap: 50px;
-    margin-top: 40px;
+    gap: 65px;
+    margin-top: 52px;
   }
 `;
 
@@ -51,7 +52,7 @@ const WrapImg = styled.div`
   animation: fadeInRight 0.8s ease-in-out both;
 
   > img {
-    width: 500px;
+    width: 650px;
     aspect-ratio: 5/3;
     border-radius: 35px;
     box-shadow: 20px 20px 50px 30px #1e3fb9;
@@ -59,13 +60,13 @@ const WrapImg = styled.div`
 
   @media (max-width: 1250px) {
     > img {
-      width: 400px;
+      width: 520px;
     }
   }
 
   @media (max-width: 440px) {
     > img {
-      width: 300px;
+      width: 390px;
     }
   }
 
@@ -116,248 +117,138 @@ const Button = styled.button`
   }
 `;
 
-const Button2 = styled.button`
-  padding: 18px 24px;
+const CoursesSection = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 0 120px;
+  margin-bottom: 100px;
+
+  @media (max-width: 1250px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 440px) {
+    max-width: 95%;
+    margin: 0 auto 100px auto;
+  }
+`;
+
+const CourseCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  animation: fadeInUp 0.8s ease-in-out both;
+  animation-delay: ${({ $delay }) => $delay}s;
+
+  > img.course-image {
+    width: 500px;
+    height: 800px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+    @media (max-width: 440px) {
+      width: 100%;
+      height: auto;
+    }
+  }
+`;
+
+const CourseButton = styled(Button)`
+  width: 100%;
+  max-width: 500px;
   background: linear-gradient(#260f69, #1e41ba);
-  border: none;
-  border-radius: 30px;
   color: white;
-  font-weight: 600;
-  font-size: 20px;
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
 
   &:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     background: linear-gradient(#372087, #254de0);
   }
-
-  @media (max-width: 440px) {
-    padding: 10px 18px;
-    margin-bottom: 10px;
-  }
-
-  animation: fadeInUp 0.5s ease-in-out both;
 `;
 
-const WrapDetailContent = styled.div`
-  animation: fadeIn 0.8s ease-in-out both;
+const PhysicsButton = styled(CourseButton)`
+  background: linear-gradient(#1a5c1a, #2d8a2d);
+  color: white;
 
-  > span {
-    font-size: 40px;
-  }
-  > h3 {
-    font-size: 40px;
-  }
-
-  @media (max-width: 440px) {
-    > span {
-      font-size: 20px;
-    }
-    > h3 {
-      font-size: 20px;
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  &:hover {
+    background: linear-gradient(#2d8a2d, #3ca63c);
   }
 `;
 
-const WrapDetailContent2 = styled.div`
-  animation: fadeInLeft 0.8s ease-in-out both;
+const GeometryButton = styled(CourseButton)`
+  background: linear-gradient(#4a1a5c, #6a2d8a);
+  color: white;
 
-  > img {
-    width: 80px;
+  &:hover {
+    background: linear-gradient(#6a2d8a, #8a3ca6);
   }
-  > h3 {
-    font-size: 40px;
-  }
-
-  @media (max-width: 440px) {
-    > img {
-      width: 40px;
-    }
-    > h3 {
-      font-size: 20px;
-    }
-  }
-
-  @keyframes fadeInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-`;
-
-const Detail1 = styled.div`
-  text-align: center;
-  animation: fadeIn 1s ease-in-out both;
-
-  @media (max-width: 440px) {
-    > span {
-      font-size: 14px;
-    }
-  }
-`;
-
-const Detail2 = styled.div`
-  text-align: center;
-  margin-block: 100px;
-  animation: fadeIn 1s ease-in-out both;
 `;
 
 const Home = () => {
   const navigate = useNavigate();
 
   const handleJoinClick = () => {
-    navigate("/contact");
-  };
-
-  const hanldeScroll = () => {
-    const id = document.getElementById("detail");
-    if (id) {
-      id.scrollIntoView({ behavior: "smooth" });
+    const coursesSection = document.getElementById("courses-section");
+    if (coursesSection) {
+      coursesSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-  const data = [
-    {
-      order: "1.Gün -",
-      text: "Trigonometri I - II (+Çıkmış Çözümü)",
-    },
-    {
-      order: "2.Gün -",
-      text: "Log & Diziler + Limit & Süreklilik (+Çıkmış Çözümü)",
-    },
-    {
-      order: "3.Gün -",
-      text: "Türev & İntegral (+Çıkmış Çözümü)",
-    },
-  ];
-  const data2 = [
-    {
-      icon: icon1,
-      text: "Her sene garanti çıkan konuları pekiştirerek +15 net kazanacaksın.",
-    },
-    {
-      icon: icon2,
-      text: "Konuları derece öğrencisinden öğrenecek ve derece öğrencisi gözünden çıkmışları çözeceksin.",
-    },
-    {
-      icon: icon3,
-      text: "Feynman Tekniğini uygulayarak konulara ve sorulara hükmeder hale geleceksin.",
-    },
-  ];
+
   return (
     <Wrap>
-      <h1>X Akademi</h1>
+      <Navbar />
       <Container>
         <div>
-          <Title style={{ color: "#36B7FF" }}>AYT Matematik</Title>
-          <Title>Sağlamlaştırma</Title>
-          <Title>Kampı</Title>
+          <Title style={{ color: "#36B7FF" }}>Fulleten Feynman</Title>
+          <Title>Kampları İle</Title>
+          <Title>Netlerini Artır!</Title>
           <p style={{ maxWidth: "400px" }}>
-            AYT Matematiğin en çok çıkan konularını derece öğrencisinden dinle,
-            Feynman Tekniği ile pekiştir ve bütün çıkmış soruları derece
-            öğrencisiyle birlikte çözerek +15 neti garantiye al!
+            Bir türlü halledemediğin dersleri ve artmayan netlerini
+            bizzat SAY 249.su ile ve
+            "Full Tekrar + Çıkmışlara Feynman" tekniği ile çalışarak
+            kısa sürede hallet!
           </p>
           <div
             style={{
               display: "flex",
               gap: "30px",
               flexWrap: "wrap",
-              justifyContent: "center",
+              justifyContent: "flex-start",
               marginBlock: "18px",
             }}
           >
-            <Button onClick={handleJoinClick}>Kampa Katıl</Button>
-            <Button2 onClick={hanldeScroll}>Müfredatı Gör</Button2>
+            <Button onClick={handleJoinClick}>Kampları Gör</Button>
           </div>
-          <span>*Kamp ücreti 1000₺’dir.</span>
         </div>
         <WrapImg>
           <img src={banner} />
         </WrapImg>
       </Container>
-      <Detail1 id="detail">
-        <Title $second={true} style={{ color: "#36B7FF" }}>
-          Kamp Başlangıç Tarihi: 5 Mayıs 2025
-        </Title>
-        <span
-          style={{
-            color: "#36B7FF",
-            marginBottom: "20px",
-            marginTop: "15px",
-            display: "block",
-          }}
-        >
-          Kamp her gün akşam saatlerinde online olarak gerçekleşecektir.
-        </span>
-        {data.map(({ order, text }, id) => {
-          return (
-            <WrapDetailContent
-              key={id}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "10px",
-                marginBottom: "20px",
-              }}
-            >
-              <span style={{ color: "#7FE4F0" }}>{order}</span>
-              <h3 style={{ color: "#fff", margin: "0" }}>{text}</h3>
-            </WrapDetailContent>
-          );
-        })}
-        <Button onClick={handleJoinClick} style={{ marginBlock: "20px" }}>
-          Kampa Katıl
-        </Button>
-      </Detail1>
-      <Detail2>
-        {data2.map(({ icon, text }, id) => {
-          return (
-            <WrapDetailContent2
-              key={id}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "40px",
-                marginBottom: "20px",
-              }}
-            >
-              <img src={icon} />
-              <h3
-                style={{
-                  color: "#fff",
-                  margin: "0",
-                  width: "60%",
-                  textAlign: "left",
-                }}
-              >
-                {text}
-              </h3>
-            </WrapDetailContent2>
-          );
-        })}
-        <Button onClick={handleJoinClick} style={{ marginBlock: "20px" }}>
-          Kampa Katıl
-        </Button>
-      </Detail2>
+
+      <CoursesSection id="courses-section">
+        <CourseCard $delay={0.2}>
+          <img src={placeholder} alt="AYT Matematik" className="course-image" />
+          <CourseButton onClick={() => navigate("/aytmatematik")}>
+            AYT Matematik - Detayları Gör
+          </CourseButton>
+        </CourseCard>
+        <CourseCard $delay={0.4}>
+          <img src={image2} alt="AYT Fizik" className="course-image" />
+          <PhysicsButton onClick={() => navigate("/aytfizik")}>
+            AYT Fizik - Detayları Gör
+          </PhysicsButton>
+        </CourseCard>
+        <CourseCard $delay={0.6}>
+          <img src={image3} alt="Geometri" className="course-image" />
+          <GeometryButton onClick={() => navigate("/geometri")}>
+            Geometri - Detayları Gör
+          </GeometryButton>
+        </CourseCard>
+      </CoursesSection>
     </Wrap>
   );
 };

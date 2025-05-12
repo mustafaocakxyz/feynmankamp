@@ -197,47 +197,48 @@ const Contact = () => {
     <PageWrapper>
       <PageTitle>X Akademi</PageTitle>
       <ContentContainer>
-        <FormSection onSubmit={Submit}>
-          <Label htmlFor="name">Ad / Soyad</Label>
-          <Input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Adınızı girin"
-            required
-            value={formData.name}
-            onChange={handleChange}
-          />
+        <div>
+          <FormSection onSubmit={Submit}>
+            <Label htmlFor="name">Ad / Soyad</Label>
+            <Input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Adınızı girin"
+              required
+              value={formData.name}
+              onChange={handleChange}
+            />
 
-          <Label htmlFor="phone">Tel No:</Label>
-          <Input
-            type="text"
-            name="phone"
-            id="phone"
-            placeholder="Telefon numaranız"
-            required
-            value={formData.phone}
-            onChange={handleChange}
-          />
+            <Label htmlFor="phone">Tel No:</Label>
+            <Input
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="Telefon numaranız"
+              required
+              value={formData.phone}
+              onChange={handleChange}
+            />
 
-          <Button type="submit" disabled={sending}>
-            {sending ? "Gönderiliyor..." : "Başvur"}
-          </Button>
+            <Button type="submit" disabled={sending}>
+              {sending ? "Gönderiliyor..." : "Başvur"}
+            </Button>
 
-          <Note>
-            *Bu bilgiler ödeme işleminizi kontrol ederken ve kamp WhatsApp
-            grubuna eklenme süreçlerinizde kullanılacaktır.
-          </Note>
-        </FormSection>
+            <Note>
+              *Bu bilgiler ödeme işleminizi kontrol ederken ve kamp WhatsApp
+              grubuna eklenme süreçlerinizde kullanılacaktır.
+            </Note>
+          </FormSection>
+        </div>
 
         <InfoSection>
-          <InfoText>BU PROGRAM ÜCRETLİ BİR PROGRAMDIR.</InfoText>
+          <InfoText>KATILACAĞINIZ KAMPLAR ÜCRETLİDİR.</InfoText>
           <InfoText>
-            Yoğun talep üzerine 5 Mayıs'ta ikinci bir kamp daha düzenlenecektir.
-            (Bu bilgi değişebilir.)
+            Her bir kampın tek başına ücreti 700₺'dir.
           </InfoText>
           <InfoText>
-            Başvurunuzu yaptıktan sonra aşağıdaki hesap bilgilerine kamp ücreti olan 1000₺'yi göndermeniz gerekmektedir.
+            Başvurunuzu yaptıktan sonra aşağıdaki hesaba katılmak istediğiniz kampların ücretini göndermeniz gerekmektedir.
           </InfoText>
           <InfoText>
             Ödemesi yapılmayan başvurular otomatik olarak yok sayılmaktadır.
