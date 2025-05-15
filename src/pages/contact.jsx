@@ -94,6 +94,18 @@ const Button = styled.button`
   }
 `;
 
+const PurpleButton = styled(Button)`
+  color: #fff;
+  border: 2px solid #8a3ca6;
+  background: #8a3ca6;
+
+  &:hover {
+    background: #a259c4;
+    border-color: #a259c4;
+    color: #fff;
+  }
+`;
+
 const Note = styled.p`
   font-size: 16px;
   margin-top: 10px;
@@ -140,7 +152,11 @@ const RemainingSlot = styled.p`
 `;
 
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: "", phone: "" });
+  const [formData, setFormData] = useState({ 
+    name: "", 
+    phone: "",
+    camps: ""
+  });
   const [notification, setNotification] = useState({
     message: "",
     success: false,
@@ -154,7 +170,7 @@ const Contact = () => {
   };
 
   const reset = () => {
-    setFormData({ name: "", phone: "" });
+    setFormData({ name: "", phone: "", camps: "" });
   };
 
   const Submit = (e) => {
@@ -195,52 +211,74 @@ const Contact = () => {
 
   return (
     <PageWrapper>
-      <PageTitle>X Akademi</PageTitle>
+      <PageTitle>Ödeme Sayfası</PageTitle>
       <ContentContainer>
-        <FormSection onSubmit={Submit}>
-          <Label htmlFor="name">Ad / Soyad</Label>
-          <Input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Adınızı girin"
-            required
-            value={formData.name}
-            onChange={handleChange}
-          />
+        <div>
+          <FormSection onSubmit={Submit}>
+            <Label htmlFor="name">Ad / Soyad</Label>
+            <Input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Adınızı girin"
+              required
+              value={formData.name}
+              onChange={handleChange}
+            />
 
-          <Label htmlFor="phone">Tel No:</Label>
-          <Input
-            type="text"
-            name="phone"
-            id="phone"
-            placeholder="Telefon numaranız"
-            required
-            value={formData.phone}
-            onChange={handleChange}
-          />
+            <Label htmlFor="phone">Tel No:</Label>
+            <Input
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="Telefon numaranız"
+              required
+              value={formData.phone}
+              onChange={handleChange}
+            />
 
-          <Button type="submit" disabled={sending}>
-            {sending ? "Gönderiliyor..." : "Başvur"}
-          </Button>
+            <Label htmlFor="camps">Hangi Kamplara Katılıyorsunuz?</Label>
+            <Input
+              type="text"
+              name="camps"
+              id="camps"
+              placeholder="AYT Matematik ve geometri"
+              required
+              value={formData.camps}
+              onChange={handleChange}
+            />
 
-          <Note>
-            *Bu bilgiler ödeme işleminizi kontrol ederken ve kamp WhatsApp
-            grubuna eklenme süreçlerinizde kullanılacaktır.
-          </Note>
-        </FormSection>
+            <Button type="submit" disabled={sending}>
+              {sending ? "Gönderiliyor..." : "Başvur"}
+            </Button>
+
+            <Note>
+              *Bu bilgiler ödeme işleminizi kontrol ederken ve kamp WhatsApp
+              grubuna eklenme süreçlerinizde kullanılacaktır.
+            </Note>
+          </FormSection>
+
+          <PurpleButton
+            type="button"
+            onClick={() => window.open('https://www.shopier.com/xakademi_xyz', '_blank')}
+            style={{ marginTop: '20px', width: '100%' }}
+          >
+            Shopier Üzerinden Satın Al
+          </PurpleButton>
+        </div>
 
         <InfoSection>
-          <InfoText>BU PROGRAM ÜCRETLİ BİR PROGRAMDIR.</InfoText>
           <InfoText>
-            Yoğun talep üzerine 5 Mayıs'ta ikinci bir kamp daha düzenlenecektir.
-            (Bu bilgi değişebilir.)
+            Her bir kampın tek başına ücreti 800₺'dir.
           </InfoText>
           <InfoText>
-            Başvurunuzu yaptıktan sonra aşağıdaki hesap bilgilerine kamp ücreti olan 1000₺'yi göndermeniz gerekmektedir.
-          </InfoText>
-          <InfoText>
+            Başvurunuzu yaptıktan sonra aşağıdaki hesaba katılmak istediğiniz 
+            kampların ücretini göndermeniz gerekmektedir.
             Ödemesi yapılmayan başvurular otomatik olarak yok sayılmaktadır.
+          </InfoText>
+          <InfoText>
+            Shopier üzerinden satın alım yaptığınız takdirde buradan bir işlem
+            yapmanıza gerek yoktur.
           </InfoText>
           <AccountDetails>
             <InfoText>
@@ -250,7 +288,6 @@ const Contact = () => {
               <strong>IBAN:</strong> TR470020500009728730500004
             </InfoText>
           </AccountDetails>
-          <RemainingSlot>KALAN KONTENJAN: 13 / 21</RemainingSlot>
         </InfoSection>
       </ContentContainer>
 
