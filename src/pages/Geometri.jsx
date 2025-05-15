@@ -286,7 +286,7 @@ const Geometri = () => {
               marginBlock: "18px",
             }}
           >
-            <Button onClick={handleJoinClick}>Kampa Katıl</Button>
+            <Button onClick={() => navigate('/contact')}>Kampa Katıl</Button>
             <Button2 onClick={hanldeScroll}>Müfredatı Gör</Button2>
           </div>
         </div>
@@ -296,7 +296,7 @@ const Geometri = () => {
       </Container>
       <Detail1 id="detail">
         <Title $second={true} style={{ color: "#8a3ca6" }}>
-          Kamp Başlangıç Tarihi: 5 Mayıs 2025
+          Kamp Başlangıç Tarihi: 20 Mayıs 2025
         </Title>
         <span
           style={{
@@ -306,7 +306,7 @@ const Geometri = () => {
             display: "block",
           }}
         >
-          Kamp her gün akşam saatlerinde online olarak gerçekleşecektir.
+          Kamp her gün akşam (17.00 - 19.00) saatlerinde online olarak gerçekleşecektir. Bu bilgi değişebilir.
         </span>
         {data.map(({ order, text }, id) => {
           return (
@@ -325,7 +325,7 @@ const Geometri = () => {
             </WrapDetailContent>
           );
         })}
-        <Button onClick={handleJoinClick} style={{ marginBlock: "20px" }}>
+        <Button onClick={() => navigate('/contact')} style={{ marginBlock: "20px" }}>
           Kampa Katıl
         </Button>
       </Detail1>
@@ -356,7 +356,7 @@ const Geometri = () => {
             </WrapDetailContent2>
           );
         })}
-        <Button onClick={handleJoinClick} style={{ marginBlock: "20px" }}>
+        <Button onClick={() => navigate('/contact')} style={{ marginBlock: "20px" }}>
           Kampa Katıl
         </Button>
       </Detail2>

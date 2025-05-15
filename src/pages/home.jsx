@@ -215,13 +215,16 @@ const Home = () => {
           <div
             style={{
               display: "flex",
-              gap: "30px",
-              flexWrap: "wrap",
-              justifyContent: "flex-start",
+              flexDirection: "column",
+              gap: "6px",
+              alignItems: "flex-start",
               marginBlock: "18px",
             }}
           >
-            <Button onClick={handleJoinClick}>Kampları Gör</Button>
+            <Button onClick={handleJoinClick}>
+              Kampları Gör
+            </Button>
+            <span style={{ fontSize: "16px"}}>*Kamplarımızın kontenjanı sınırlıdır ve giriş ücretlidir.</span>
           </div>
         </div>
         <WrapImg>
