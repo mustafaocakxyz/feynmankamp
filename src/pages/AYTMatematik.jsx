@@ -294,7 +294,7 @@ const AYTMatematik = () => {
       </Container>
       <Detail1 id="detail">
         <Title $second={true} style={{ color: "#36B7FF" }}>
-          Kamp Başlangıç Tarihi: 20 Mayıs 2025
+          Kamp Başlangıç Tarihi: 31 Mayıs 2025
         </Title>
         <span
           style={{
@@ -304,7 +304,7 @@ const AYTMatematik = () => {
             display: "block",
           }}
         >
-          Kamp her gün ikindi saatlerinde (15.00 - 17.00) online olarak gerçekleşecektir. Bu bilgi değişebilir.
+          Kamp 31 Mayıs günü başlayacak olup her gün ikindi saatlerinde (15.00 - 17.00) online olarak gerçekleşecektir. Bu bilgi değişebilir.
         </span>
         {data.map(({ order, text }, id) => {
           return (

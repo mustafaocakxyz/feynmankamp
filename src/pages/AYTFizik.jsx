@@ -301,7 +301,7 @@ const AYTFizik = () => {
       </Container>
       <Detail1 id="detail">
         <Title $second={true} style={{ color: "#2d8a2d" }}>
-          Kamp Başlangıç Tarihi: 24 Mayıs 2025
+          Kamp Başlangıç Tarihi: 24 Mayıs 2025 (Başladı, Sürüyor)
         </Title>
         <span
           style={{

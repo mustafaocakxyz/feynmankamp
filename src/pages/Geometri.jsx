@@ -296,7 +296,7 @@ const Geometri = () => {
       </Container>
       <Detail1 id="detail">
         <Title $second={true} style={{ color: "#8a3ca6" }}>
-          Kamp Başlangıç Tarihi: 20 Mayıs 2025
+          Kamp Başlangıç Tarihi: 31 Mayıs 2025
         </Title>
         <span
           style={{
@@ -306,7 +306,7 @@ const Geometri = () => {
             display: "block",
           }}
         >
-          Kamp her gün akşam (17.00 - 19.00) saatlerinde online olarak gerçekleşecektir. Bu bilgi değişebilir.
+          Kamp 31 Mayıs günü başlayacak olup her gün akşam (17.00 - 19.00) saatlerinde online olarak gerçekleşecektir. Bu bilgi değişebilir.
         </span>
         {data.map(({ order, text }, id) => {
           return (
