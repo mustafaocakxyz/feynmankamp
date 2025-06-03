@@ -294,7 +294,7 @@ const AYTMatematik = () => {
       </Container>
       <Detail1 id="detail">
         <Title $second={true} style={{ color: "#36B7FF" }}>
-          Kamp Başlangıç Tarihi: 31 Mayıs 2025
+          Kamp Başlangıç Tarihi: Belli Değil...
         </Title>
         <span
           style={{

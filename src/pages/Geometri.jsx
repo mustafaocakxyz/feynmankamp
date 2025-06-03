@@ -296,7 +296,7 @@ const Geometri = () => {
       </Container>
       <Detail1 id="detail">
         <Title $second={true} style={{ color: "#8a3ca6" }}>
-          Kamp Başlangıç Tarihi: 31 Mayıs 2025
+          Kamp Başlangıç Tarihi: Belli Değil...
         </Title>
         <span
           style={{
