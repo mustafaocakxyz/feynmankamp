@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import banner from "../public/banner.jpg";
+import banner from "../public/banner.png";
 import icon1 from "../public/image-1.jpg";
 import icon2 from "../public/image-2.jpg";
 import icon3 from "../public/image-3.jpg";
@@ -215,7 +215,23 @@ const Detail1 = styled.div`
     > span {
       font-size: 14px;
     }
+    > h3 {
+      font-size: 20px;
+      line-height: 1.4;
+      max-width: 100%;
+      padding: 0 20px;
+    }
   }
+`;
+
+const DescriptionText = styled.h3`
+  color: #fff;
+  font-size: 32px;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
 `;
 
 const Detail2 = styled.div`
@@ -237,20 +253,6 @@ const Geometri = () => {
       id.scrollIntoView({ behavior: "smooth" });
     }
   };
-  const data = [
-    {
-      order: "1.Gün -",
-      text: "Üçgenler & Çokgenler(+Çıkmış Çözümü)",
-    },
-    {
-      order: "2.Gün -",
-      text: "Analitik Geometri (+Çıkmış Çözümü)",
-    },
-    {
-      order: "3.Gün -",
-      text: "Çember & Daire + Katı Cisimler (+Çıkmış Çözümü)",
-    },
-  ];
   const data2 = [
     {
       icon: icon1,
@@ -273,7 +275,7 @@ const Geometri = () => {
           <Title style={{ color: "#8a3ca6" }}>TYT - AYT Geometri</Title>
           <Title>Fulleme Kampı</Title>
           <p style={{ maxWidth: "400px" }}>
-            Geometri temelin olsun olmasın, bu kampta TYT - AYT Geometride
+            Geometri temelin az biraz olanlarla, bu kampta TYT - AYT Geometride
             20 sorunun 20'sini de çözebilecek hale gelecek ve son düzlükte
             netlerini artıracaksın.
           </p>
@@ -286,7 +288,7 @@ const Geometri = () => {
               marginBlock: "18px",
             }}
           >
-            <Button onClick={() => navigate('/contact')}>Kampa Katıl</Button>
+            <Button onClick={() => window.location.href = "https://www.shopier.com/xakademi_xyz"}>Kampa Katıl</Button>
             <Button2 onClick={hanldeScroll}>Müfredatı Gör</Button2>
           </div>
         </div>
@@ -296,7 +298,7 @@ const Geometri = () => {
       </Container>
       <Detail1 id="detail">
         <Title $second={true} style={{ color: "#8a3ca6" }}>
-          Kamp Başlangıç Tarihi: Belli Değil...
+        Kamp Tarihi: 12 Haziran 2025, Saat: 16:00
         </Title>
         <span
           style={{
@@ -306,26 +308,12 @@ const Geometri = () => {
             display: "block",
           }}
         >
-          Kamp 31 Mayıs günü başlayacak olup her gün akşam (17.00 - 19.00) saatlerinde online olarak gerçekleşecektir. Bu bilgi değişebilir.
+          Kamp yaklaşık olarak 4 saat sürecektir.
         </span>
-        {data.map(({ order, text }, id) => {
-          return (
-            <WrapDetailContent
-              key={id}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "10px",
-                marginBottom: "20px",
-              }}
-            >
-              <span style={{ color: "#9d4db8" }}>{order}</span>
-              <h3 style={{ color: "#fff", margin: "0" }}>{text}</h3>
-            </WrapDetailContent>
-          );
-        })}
-        <Button onClick={() => navigate('/contact')} style={{ marginBlock: "20px" }}>
+        <DescriptionText>
+          Bu kampta TYT - AYT Geometri'nin tamamını kapsayan bir konu anlatımı yapacağız. Detay formüllerle değil, derece öğrencisi mantığıyla çalışacağız. Her konu için çıkmış soruları Feynman Tekniği ile çözerek, konuların zor olmadığını ve soruların yapılabilir olduğunu göstereceğiz.
+        </DescriptionText>
+        <Button onClick={() => window.location.href = "https://www.shopier.com/xakademi_xyz"} style={{ marginBlock: "20px" }}>
           Kampa Katıl
         </Button>
       </Detail1>
@@ -356,7 +344,7 @@ const Geometri = () => {
             </WrapDetailContent2>
           );
         })}
-        <Button onClick={() => navigate('/contact')} style={{ marginBlock: "20px" }}>
+        <Button onClick={() => window.location.href = "https://www.shopier.com/xakademi_xyz"} style={{ marginBlock: "20px" }}>
           Kampa Katıl
         </Button>
       </Detail2>

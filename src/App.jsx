@@ -4,6 +4,7 @@ import Contact from "./pages/contact.jsx";
 import AYTMatematik from "./pages/AYTMatematik.jsx";
 import AYTFizik from "./pages/AYTFizik.jsx";
 import Geometri from "./pages/Geometri.jsx";
+import AYTKimya from "./pages/AYTKimya.jsx";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/aytmatematik" element={<AYTMatematik />} />
         <Route path="/aytfizik" element={<AYTFizik />} />
         <Route path="/geometri" element={<Geometri />} />
+        <Route path="/aytkimya" element={<AYTKimya />} />
       </Routes>
     </BrowserRouter>
   );

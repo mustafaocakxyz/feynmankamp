@@ -60,6 +60,7 @@ const Navbar = () => {
         <NavLink to="/aytmatematik">AYT Matematik</NavLink>
         <NavLink to="/aytfizik">AYT Fizik</NavLink>
         <NavLink to="/geometri">Geometri</NavLink>
+        <NavLink to="/aytkimya">AYT Kimya</NavLink>
       </NavLinks>
     </Nav>
   );

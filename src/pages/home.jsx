@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import banner from "../public/banner.jpg";
+import banner from "../public/banner.png";
 import placeholder from "../public/placeholder.png";
 import image2 from "../public/2.png";
 import image3 from "../public/3.png";
+import image4 from "../public/4.png";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
@@ -188,6 +189,15 @@ const GeometryButton = styled(CourseButton)`
   }
 `;
 
+const ChemistryButton = styled(CourseButton)`
+  background: linear-gradient(#c71585, #ff69b4);
+  color: white;
+
+  &:hover {
+    background: linear-gradient(#ff69b4, #ff1493);
+  }
+`;
+
 const Home = () => {
   const navigate = useNavigate();
 
@@ -203,8 +213,8 @@ const Home = () => {
       <Navbar />
       <Container>
         <div>
-          <Title style={{ color: "#36B7FF" }}>Fulleten Feynman</Title>
-          <Title>Kampları İle</Title>
+          <Title style={{ color: "#36B7FF" }}>Son Darbe Kampları</Title>
+          <Title>İle Son Düzlükte</Title>
           <Title>Netlerini Artır!</Title>
           <p style={{ maxWidth: "400px" }}>
             Bir türlü halledemediğin dersleri ve artmayan netlerini
@@ -233,23 +243,29 @@ const Home = () => {
       </Container>
 
       <CoursesSection id="courses-section">
-        <CourseCard $delay={0.2}>
+        <CourseCard $delay={0.1}>
           <img src={placeholder} alt="AYT Matematik" className="course-image" />
           <CourseButton onClick={() => navigate("/aytmatematik")}>
             AYT Matematik - Detayları Gör
           </CourseButton>
         </CourseCard>
-        <CourseCard $delay={0.4}>
+        <CourseCard $delay={0.3}>
           <img src={image2} alt="AYT Fizik" className="course-image" />
           <PhysicsButton onClick={() => navigate("/aytfizik")}>
             AYT Fizik - Detayları Gör
           </PhysicsButton>
         </CourseCard>
-        <CourseCard $delay={0.6}>
+        <CourseCard $delay={0.5}>
           <img src={image3} alt="Geometri" className="course-image" />
           <GeometryButton onClick={() => navigate("/geometri")}>
             Geometri - Detayları Gör
           </GeometryButton>
+        </CourseCard>
+        <CourseCard $delay={0.7}>
+          <img src={image4} alt="AYT Kimya" className="course-image" />
+          <ChemistryButton onClick={() => navigate("/aytkimya")}>
+            AYT Kimya - Detayları Gör
+          </ChemistryButton>
         </CourseCard>
       </CoursesSection>
     </Wrap>
