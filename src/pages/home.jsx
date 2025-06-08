@@ -119,21 +119,25 @@ const Button = styled.button`
 `;
 
 const CoursesSection = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   padding: 0 120px;
   margin-bottom: 100px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (max-width: 1250px) {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
     padding: 0 20px;
+    gap: 30px;
   }
 
   @media (max-width: 440px) {
     max-width: 95%;
     margin: 0 auto 100px auto;
+    gap: 20px;
   }
 `;
 
@@ -142,27 +146,30 @@ const CourseCard = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  flex: 1;
   animation: fadeInUp 0.8s ease-in-out both;
   animation-delay: ${({ $delay }) => $delay}s;
 
   > img.course-image {
-    width: 500px;
-    height: 800px;
+    width: 100%;
+    height: 600px;
     object-fit: cover;
+    object-position: top;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 
+    @media (max-width: 1250px) {
+      height: 500px;
+    }
+
     @media (max-width: 440px) {
-      width: 100%;
-      height: auto;
+      height: 400px;
     }
   }
 `;
 
 const CourseButton = styled(Button)`
   width: 100%;
-  max-width: 500px;
+  max-width: 100%;
   background: linear-gradient(#260f69, #1e41ba);
   color: white;
 
@@ -249,19 +256,19 @@ const Home = () => {
             AYT Matematik - Detayları Gör
           </CourseButton>
         </CourseCard>
-        <CourseCard $delay={0.3}>
+        <CourseCard $delay={0.2}>
           <img src={image2} alt="AYT Fizik" className="course-image" />
           <PhysicsButton onClick={() => navigate("/aytfizik")}>
             AYT Fizik - Detayları Gör
           </PhysicsButton>
         </CourseCard>
-        <CourseCard $delay={0.5}>
+        <CourseCard $delay={0.3}>
           <img src={image3} alt="Geometri" className="course-image" />
           <GeometryButton onClick={() => navigate("/geometri")}>
             Geometri - Detayları Gör
           </GeometryButton>
         </CourseCard>
-        <CourseCard $delay={0.7}>
+        <CourseCard $delay={0.4}>
           <img src={image4} alt="AYT Kimya" className="course-image" />
           <ChemistryButton onClick={() => navigate("/aytkimya")}>
             AYT Kimya - Detayları Gör
