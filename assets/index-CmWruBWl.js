@@ -203,46 +203,53 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
     }
   }
 `,B1=K.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 40px;
   padding: 0 120px;
   margin-bottom: 100px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (max-width: 1250px) {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
     padding: 0 20px;
+    gap: 30px;
   }
 
   @media (max-width: 440px) {
     max-width: 95%;
     margin: 0 auto 100px auto;
+    gap: 20px;
   }
 `,Ni=K.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  flex: 1;
   animation: fadeInUp 0.8s ease-in-out both;
   animation-delay: ${({$delay:u})=>u}s;
 
   > img.course-image {
-    width: 500px;
-    height: 800px;
+    width: 100%;
+    height: 600px;
     object-fit: cover;
+    object-position: top;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 
+    @media (max-width: 1250px) {
+      height: 500px;
+    }
+
     @media (max-width: 440px) {
-      width: 100%;
-      height: auto;
+      height: 400px;
     }
   }
 `,ic=K(b0)`
   width: 100%;
-  max-width: 500px;
+  max-width: 100%;
   background: linear-gradient(#260f69, #1e41ba);
   color: white;
 
@@ -270,7 +277,7 @@ Please change the parent <Route path="${k}"> to <Route path="${k==="/"?"*":`${k}
   &:hover {
     background: linear-gradient(#ff69b4, #ff1493);
   }
-`,q1=()=>{const u=an(),c=()=>{const f=document.getElementById("courses-section");f&&f.scrollIntoView({behavior:"smooth"})};return E.jsxs(j1,{children:[E.jsx(yu,{}),E.jsxs(U1,{children:[E.jsxs("div",{children:[E.jsx(Bf,{style:{color:"#36B7FF"},children:"Son Darbe Kampları"}),E.jsx(Bf,{children:"İle Son Düzlükte"}),E.jsx(Bf,{children:"Netlerini Artır!"}),E.jsx("p",{style:{maxWidth:"400px"},children:'Bir türlü halledemediğin dersleri ve artmayan netlerini bizzat SAY 249.su ile ve "Full Tekrar + Çıkmışlara Feynman" tekniği ile çalışarak kısa sürede hallet!'}),E.jsxs("div",{style:{display:"flex",flexDirection:"column",gap:"6px",alignItems:"flex-start",marginBlock:"18px"},children:[E.jsx(b0,{onClick:c,children:"Kampları Gör"}),E.jsx("span",{style:{fontSize:"16px"},children:"*Kamplarımızın kontenjanı sınırlıdır ve giriş ücretlidir."})]})]}),E.jsx(N1,{children:E.jsx("img",{src:du})})]}),E.jsxs(B1,{id:"courses-section",children:[E.jsxs(Ni,{$delay:.1,children:[E.jsx("img",{src:lv,alt:"AYT Matematik",className:"course-image"}),E.jsx(ic,{onClick:()=>u("/aytmatematik"),children:"AYT Matematik - Detayları Gör"})]}),E.jsxs(Ni,{$delay:.3,children:[E.jsx("img",{src:nv,alt:"AYT Fizik",className:"course-image"}),E.jsx(H1,{onClick:()=>u("/aytfizik"),children:"AYT Fizik - Detayları Gör"})]}),E.jsxs(Ni,{$delay:.5,children:[E.jsx("img",{src:uv,alt:"Geometri",className:"course-image"}),E.jsx(Y1,{onClick:()=>u("/geometri"),children:"Geometri - Detayları Gör"})]}),E.jsxs(Ni,{$delay:.7,children:[E.jsx("img",{src:iv,alt:"AYT Kimya",className:"course-image"}),E.jsx(k1,{onClick:()=>u("/aytkimya"),children:"AYT Kimya - Detayları Gör"})]})]})]})},G1=K.div`
+`,q1=()=>{const u=an(),c=()=>{const f=document.getElementById("courses-section");f&&f.scrollIntoView({behavior:"smooth"})};return E.jsxs(j1,{children:[E.jsx(yu,{}),E.jsxs(U1,{children:[E.jsxs("div",{children:[E.jsx(Bf,{style:{color:"#36B7FF"},children:"Son Darbe Kampları"}),E.jsx(Bf,{children:"İle Son Düzlükte"}),E.jsx(Bf,{children:"Netlerini Artır!"}),E.jsx("p",{style:{maxWidth:"400px"},children:'Bir türlü halledemediğin dersleri ve artmayan netlerini bizzat SAY 249.su ile ve "Full Tekrar + Çıkmışlara Feynman" tekniği ile çalışarak kısa sürede hallet!'}),E.jsxs("div",{style:{display:"flex",flexDirection:"column",gap:"6px",alignItems:"flex-start",marginBlock:"18px"},children:[E.jsx(b0,{onClick:c,children:"Kampları Gör"}),E.jsx("span",{style:{fontSize:"16px"},children:"*Kamplarımızın kontenjanı sınırlıdır ve giriş ücretlidir."})]})]}),E.jsx(N1,{children:E.jsx("img",{src:du})})]}),E.jsxs(B1,{id:"courses-section",children:[E.jsxs(Ni,{$delay:.1,children:[E.jsx("img",{src:lv,alt:"AYT Matematik",className:"course-image"}),E.jsx(ic,{onClick:()=>u("/aytmatematik"),children:"AYT Matematik - Detayları Gör"})]}),E.jsxs(Ni,{$delay:.2,children:[E.jsx("img",{src:nv,alt:"AYT Fizik",className:"course-image"}),E.jsx(H1,{onClick:()=>u("/aytfizik"),children:"AYT Fizik - Detayları Gör"})]}),E.jsxs(Ni,{$delay:.3,children:[E.jsx("img",{src:uv,alt:"Geometri",className:"course-image"}),E.jsx(Y1,{onClick:()=>u("/geometri"),children:"Geometri - Detayları Gör"})]}),E.jsxs(Ni,{$delay:.4,children:[E.jsx("img",{src:iv,alt:"AYT Kimya",className:"course-image"}),E.jsx(k1,{onClick:()=>u("/aytkimya"),children:"AYT Kimya - Detayları Gör"})]})]})]})},G1=K.div`
   background-color: #0b1320;
   color: white;
   min-height: 100vh;
