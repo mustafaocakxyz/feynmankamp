@@ -1,32 +1,44 @@
 import styled from "styled-components";
-import banner from "../public/banner.png";
-import placeholder from "../public/placeholder.png";
-import image2 from "../public/2.png";
-import image3 from "../public/3.png";
-import image4 from "../public/4.png";
+import { TextSearch, Radical } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
 
-const Wrap = styled.div`
-  padding: 50px;
+const HomeContainer = styled.div`
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #0f0f0f 50%, #1a1a1a 75%, #0a0a0a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Mont', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  gap: 60px;
 `;
 
-const Title = styled.h2`
-  font-size: ${({ $second }) => ($second ? "48px" : "64px")};
+const MainTitle = styled.h1`
+  font-size: 4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 25%, #f5f5f5 50%, #e8e8e8 75%, #c0c0c0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
   margin: 0;
-  animation: fadeInDown 0.6s ease-in-out both;
-  font-family: "Poppins", sans-serif;
-  line-height: 64px;
+  text-shadow: 0 0 30px rgba(192, 192, 192, 0.3);
+  animation: fadeInDown 0.8s ease-out both;
+  animation-delay: 0.2s;
 
-  @media (max-width: 440px) {
-    font-size: 36px;
-    line-height: 36px;
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
   }
 
   @keyframes fadeInDown {
     from {
       opacity: 0;
-      transform: translateY(-30px);
+      transform: translateY(-40px);
     }
     to {
       opacity: 1;
@@ -35,81 +47,76 @@ const Title = styled.h2`
   }
 `;
 
-const Container = styled.div`
+const CardContainer = styled.div`
+  width: 100%;
+  max-width: 1000px;
   display: flex;
-  gap: 156px;
-  margin: 195px 0px 260px 0;
+  flex-direction: column;
+  gap: 40px;
   align-items: center;
-  justify-content: center;
-
-  @media (max-width: 1250px) {
-    flex-direction: column;
-    gap: 65px;
-    margin-top: 52px;
-  }
 `;
 
-const WrapImg = styled.div`
-  animation: fadeInRight 0.8s ease-in-out both;
-
-  > img {
-    width: 650px;
-    aspect-ratio: 5/3;
-    border-radius: 35px;
-    box-shadow: 20px 20px 50px 30px #1e3fb9;
+const MetallicCard = styled.div`
+  width: 100%;
+  max-width: 800px;
+  height: 300px;
+  background: linear-gradient(135deg, 
+    #bf360c 0%, 
+    #d84315 20%, 
+    #e64a19 40%, 
+    #f57c00 70%, 
+    #e64a19 80%, 
+    #d84315 100%);
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 10px 30px rgba(216, 67, 21, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  animation: fadeInUp 0.8s ease-out both;
+  animation-delay: 0.6s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 👈 smooth change */
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.1) 0%, 
+      rgba(255, 255, 255, 0.05) 50%, 
+      rgba(0, 0, 0, 0.1) 100%);
+    border-radius: 20px;
+    pointer-events: none;
   }
-
-  @media (max-width: 1250px) {
-    > img {
-      width: 520px;
-    }
-  }
-
-  @media (max-width: 440px) {
-    > img {
-      width: 390px;
-    }
-  }
-
-  @keyframes fadeInRight {
-    from {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-`;
-
-const Button = styled.button`
-  padding: 18px 24px;
-  background: linear-gradient(#80e5f0, #fff);
-  border: none;
-  border-radius: 30px;
-  color: black;
-  font-weight: 600;
-  font-size: 20px;
-  cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease;
 
   &:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-    background: linear-gradient(#5fd4e8, #e0f7ff);
+    transform: translateY(0) scale(1.15);
+    cursor: pointer;
+    box-shadow: 
+      0 15px 40px rgba(21, 101, 192, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.15);
   }
 
-  @media (max-width: 440px) {
-    padding: 10px 18px;
+  @media (max-width: 768px) {
+    height: 275px;
+    padding: 25px;
   }
 
-  animation: fadeInUp 0.5s ease-in-out both;
+  @media (max-width: 480px) {
+    height: 250px;
+    padding: 20px;
+  }
 
   @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(40px);
     }
     to {
       opacity: 1;
@@ -118,164 +125,208 @@ const Button = styled.button`
   }
 `;
 
-const CoursesSection = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  padding: 0 120px;
-  margin-bottom: 100px;
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
 
-  @media (max-width: 1250px) {
-    grid-template-columns: 1fr;
-    padding: 0 20px;
-    gap: 30px;
-  }
-
-  @media (max-width: 440px) {
-    max-width: 95%;
-    margin: 0 auto 100px auto;
-    gap: 20px;
-  }
+const BlueMetallicCard = styled(MetallicCard)`
+  background: linear-gradient(135deg, 
+    #1565c0 0%, 
+    #1976d2 20%, 
+    #1976d2 40%, 
+    #42a5f5 70%, 
+    #2196f3 80%, 
+    #1976d2 100%);
+  box-shadow: 
+    0 10px 30px rgba(21, 101, 192, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  animation-delay: 1s;
 `;
 
-const CourseCard = styled.div`
+const CardContent = styled.div`
+  position: relative;
+  z-index: 2;
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+`;
+
+const CardHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1;
+`;
+
+const CardText = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+`;
+
+const CardMainContent = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const CardTitle = styled.h2`
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 8px 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 768px) {
+    font-size: 1.7rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.4rem;
+  }
+`;
+
+const AttendeeCount = styled.div`
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 15px 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
+`;
+
+const CardDescription = styled.p`
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+  max-width: 75%;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    max-width: 70%;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+    max-width: 65%;
+  }
+`;
+
+const CardDateTime = styled.div`
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: auto;
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
+`;
+
+const CardIcon = styled.div`
+  width: 80px;
+  height: 80%;
+  display: flex;
   align-items: center;
-  gap: 20px;
-  animation: fadeInUp 0.8s ease-in-out both;
-  animation-delay: ${({ $delay }) => $delay}s;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 
-  > img.course-image {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-    object-position: top;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  svg {
+    width: 180px;
+    height: 180px;
+    stroke-width: 1.5;
+  }
 
-    @media (max-width: 1250px) {
-      height: 500px;
-    }
-
-    @media (max-width: 440px) {
-      height: 400px;
+  @media (max-width: 768px) {
+    width: 60px;
+    
+    svg {
+      width: 150px;
+      height: 150px;
     }
   }
-`;
 
-const CourseButton = styled(Button)`
-  width: 100%;
-  max-width: 100%;
-  background: linear-gradient(#260f69, #1e41ba);
-  color: white;
-
-  &:hover {
-    background: linear-gradient(#372087, #254de0);
-  }
-`;
-
-const PhysicsButton = styled(CourseButton)`
-  background: linear-gradient(#1a5c1a, #2d8a2d);
-  color: white;
-
-  &:hover {
-    background: linear-gradient(#2d8a2d, #3ca63c);
-  }
-`;
-
-const GeometryButton = styled(CourseButton)`
-  background: linear-gradient(#4a1a5c, #6a2d8a);
-  color: white;
-
-  &:hover {
-    background: linear-gradient(#6a2d8a, #8a3ca6);
-  }
-`;
-
-const ChemistryButton = styled(CourseButton)`
-  background: linear-gradient(#c71585, #ff69b4);
-  color: white;
-
-  &:hover {
-    background: linear-gradient(#ff69b4, #ff1493);
+  @media (max-width: 480px) {
+    width: 50px;
+    
+    svg {
+      width: 120px;
+      height: 120px;
+    }
   }
 `;
 
 const Home = () => {
   const navigate = useNavigate();
 
-  const handleJoinClick = () => {
-    const coursesSection = document.getElementById("courses-section");
-    if (coursesSection) {
-      coursesSection.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleParagraphClick = () => {
+    navigate("/paragraph");
+  };
+
+  const handleMathClick = () => {
+    navigate("/math");
   };
 
   return (
-    <Wrap>
-      <Navbar />
-      <Container>
-        <div>
-          <Title style={{ color: "#36B7FF" }}>Son Darbe Kampları</Title>
-          <Title>İle Son Düzlükte</Title>
-          <Title>Netlerini Artır!</Title>
-          <p style={{ maxWidth: "400px" }}>
-            Bir türlü halledemediğin dersleri ve artmayan netlerini
-            bizzat SAY 249.su ile ve
-            "Full Tekrar + Çıkmışlara Feynman" tekniği ile çalışarak
-            kısa sürede hallet!
-          </p>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "6px",
-              alignItems: "flex-start",
-              marginBlock: "18px",
-            }}
-          >
-            <Button onClick={handleJoinClick}>
-              Kampları Gör
-            </Button>
-            <span style={{ fontSize: "16px"}}>*Kamplarımızın kontenjanı sınırlıdır ve giriş ücretlidir.</span>
-          </div>
-        </div>
-        <WrapImg>
-          <img src={banner} />
-        </WrapImg>
-      </Container>
+    <HomeContainer>
+      <MainTitle>Hangi kampla ilgileniyorsun?</MainTitle>
+      
+      <CardContainer>
+        <MetallicCard onClick={handleParagraphClick}>
+          <CardContent>
+            <CardHeader>
+              <CardText>
+                <CardMainContent>
+                  <CardTitle>Paragraf Kampı</CardTitle>
+                  <AttendeeCount>40 kontenjandan 7'si kaldı</AttendeeCount>
+                  <CardDescription>
+                    Derece öğrencisiyle birlikte çıkmış paragraf sorularını analiz et ve paragraf netlerini artır.
+                  </CardDescription>
+                </CardMainContent>
+                <CardDateTime>📅 6 Eylül Cumartesi, 18.00 - 19.30</CardDateTime>
+              </CardText>
+              <CardIcon>
+                <TextSearch />
+              </CardIcon>
+            </CardHeader>
+          </CardContent>
+        </MetallicCard>
 
-      <CoursesSection id="courses-section">
-        <CourseCard $delay={0.1}>
-          <img src={placeholder} alt="AYT Matematik" className="course-image" />
-          <CourseButton onClick={() => navigate("/aytmatematik")}>
-            AYT Matematik - Detayları Gör
-          </CourseButton>
-        </CourseCard>
-        <CourseCard $delay={0.2}>
-          <img src={image2} alt="AYT Fizik" className="course-image" />
-          <PhysicsButton onClick={() => navigate("/aytfizik")}>
-            AYT Fizik - Detayları Gör
-          </PhysicsButton>
-        </CourseCard>
-        <CourseCard $delay={0.3}>
-          <img src={image3} alt="Geometri" className="course-image" />
-          <GeometryButton onClick={() => navigate("/geometri")}>
-            Geometri - Detayları Gör
-          </GeometryButton>
-        </CourseCard>
-        <CourseCard $delay={0.4}>
-          <img src={image4} alt="AYT Kimya" className="course-image" />
-          <ChemistryButton onClick={() => navigate("/aytkimya")}>
-            AYT Kimya - Detayları Gör
-          </ChemistryButton>
-        </CourseCard>
-      </CoursesSection>
-    </Wrap>
+        <BlueMetallicCard onClick={handleMathClick}>
+          <CardContent>
+            <CardHeader>
+              <CardText>
+                <CardMainContent>
+                  <CardTitle>İlk 12 Konu Kampı</CardTitle>
+                  <AttendeeCount>40 kontenjandan 7'si kaldı</AttendeeCount>
+                  <CardDescription>
+                    Derece öğrencisiyle birlikte TYT Matematiğin ilk 12 konusunu öğren ve çıkmış soruları Feynman Tekniği ile çözerek ustalık kazan.
+                  </CardDescription>
+                </CardMainContent>
+                <CardDateTime>📅 7 Eylül Pazar, 18.00 - 21.00</CardDateTime>
+              </CardText>
+              <CardIcon>
+                <Radical />
+              </CardIcon>
+            </CardHeader>
+          </CardContent>
+        </BlueMetallicCard>
+      </CardContainer>
+    </HomeContainer>
   );
 };
 
