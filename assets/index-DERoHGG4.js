@@ -387,7 +387,7 @@ Please change the parent <Route path="${q}"> to <Route path="${q==="/"?"*":`${q}
       height: 120px;
     }
   }
-`,k5=()=>{const i=mr(),r=()=>{i("/math")};return p.jsxs(x5,{children:[p.jsx(v5,{children:"Hangi kampla ilgileniyorsun?"}),p.jsx(b5,{children:p.jsx(T5,{onClick:r,children:p.jsx(z5,{children:p.jsxs(E5,{children:[p.jsxs(w5,{children:[p.jsxs(M5,{children:[p.jsx(A5,{children:"İlk 12 Konu | +10 Net Kampı"}),p.jsx(O5,{children:"Toplam 10 kişi satın aldı"}),p.jsx(R5,{children:"Derece öğrencisinden ilk 12 konu özet anlatım + çıkmış soru çözümü."})]}),p.jsx(_5,{children:"📅 16 Kasım, 18.00 - 21.30"})]}),p.jsx(D5,{children:p.jsx(Gy,{})})]})})})})]})},C5=C.div`
+`,k5=()=>{const i=mr(),r=()=>{i("/math")};return p.jsxs(x5,{children:[p.jsx(v5,{children:"Hangi kampla ilgileniyorsun?"}),p.jsx(b5,{children:p.jsx(T5,{onClick:r,children:p.jsx(z5,{children:p.jsxs(E5,{children:[p.jsxs(w5,{children:[p.jsxs(M5,{children:[p.jsx(A5,{children:"İlk 12 Konu | +10 Net Kampı"}),p.jsx(O5,{children:"Toplam 17 kişi satın aldı"}),p.jsx(R5,{children:"Derece öğrencisinden ilk 12 konu özet anlatım + çıkmış soru çözümü."})]}),p.jsx(_5,{children:"📅 16 Kasım, 18.00 - 21.30"})]}),p.jsx(D5,{children:p.jsx(Gy,{})})]})})})})]})},C5=C.div`
   min-height: 100vh;
   background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #0f0f0f 50%, #1a1a1a 75%, #0a0a0a 100%);
   display: flex;
